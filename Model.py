@@ -1,5 +1,5 @@
 class PastaModel:
-    def __init__(self, name: str, ingredients: list, price: float, weight: float, custom_ingredients: list=None):
+    def __init__(self, name: str, ingredients: list, price: float, weight: float, custom_ingredients: list = None):
         self.__name = name
         self.__ingredients = ingredients
         self.__price = price
@@ -46,3 +46,24 @@ class PastaModel:
             self.__custom_ingredients.extend(data)
         else:
             return "Error"
+
+
+    def add_custom_ingredients(self):
+        self.__ingredients.extend(self.__custom_ingredients)
+
+    def change_data(self, type_of_data, data):
+        if type_of_data == "name":
+            self.set_name(data)
+        elif type_of_data == "ingredients":
+            self.set_ingredients(data)
+        elif type_of_data == "price":
+            self.set_price(data)
+        elif type_of_data == "weight":
+            self.set_weight(data)
+        elif type_of_data == "custom_ingredients":
+            self.set_custom_ingredients(data)
+        else:
+            return "Error"
+
+    def client_own_pasta(self, client_ingredients: list, client_weight: float):
+        return f"Особая паста по рецептуре клиента: с составом:{client_ingredients} и весом {client_weight}. Цену рассчитайте сами."
