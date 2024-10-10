@@ -3,7 +3,7 @@ class PastaController:
         self.__model = model
 
     def get_data(self):
-        return f"Название: {self.__model.get_name()}, ингредиенты: {self.__model.get_ingredients()}, цена: {self.__model.get_price()}, вес: {self.__model.get_weight()}"
+        return [f"Название: {self.__model.get_name()}", f"Ингредиенты: {self.__model.get_ingredients()}", f"Цена: {self.__model.get_price()}", f"Вес: {self.__model.get_weight()}"]
 
     def change_data(self, user_rights, type_of_data, data):
         if user_rights == "admin":
@@ -12,7 +12,7 @@ class PastaController:
         else:
             return "Ошибка: нет доступа"
 
-    def append_custom_ingredients(self, user_rights):
+    def add_custom_ingredients(self, user_rights):
         if user_rights == "admin":
             self.__model.add_custom_ingredients()
         else:
