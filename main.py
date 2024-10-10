@@ -11,7 +11,7 @@ print(spaghetti.get_ingredients())
 spaghetti.add_custom_ingredients()
 print(spaghetti.get_ingredients())
 
-print(spaghetti.client_own_pasta(["pasta","MANY MANY GREEEEEEEN!!!"], 5.0), "\n")
+print(spaghetti.client_own_pasta(["pasta","MANY MANY GREEEEEEEN!!!"], 5.0))
 
 
 print(c_spaghetti.get_data())
@@ -21,8 +21,8 @@ print(c_spaghetti.get_data())
 
 print(c_spaghetti.client_own_pasta("customer", ["entire chicken filled with pasta inside", "some green outside"], 7.999))
 
+
 show_me_that_tasty_spaghetti.print_data()
-print("\n")
 
 print(show_me_that_tasty_spaghetti.change_data("admin", "name", "Bolognese pasta"))
 show_me_that_tasty_spaghetti.print_menu()

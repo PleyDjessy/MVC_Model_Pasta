@@ -10,7 +10,7 @@ class PastaView:
 
     def change_data(self, user_rights, type_of_data, data):
         if user_rights == "admin":
-            self.__controller.change_data(type_of_data, data)
+            self.__controller.change_data(user_rights, type_of_data, data)
             return "Успешно"
         else:
             return "Ошибка: нет доступа"
