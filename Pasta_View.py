@@ -1,12 +1,20 @@
+import webbrowser
+import os
+
 class PastaView:
+
     def __init__(self, controller):
         self.__controller = controller
 
     def print_data(self):
         print(*self.__controller.get_data(), sep=", ")
+        image = os.path.abspath("MVC_Pasta/Pasta.jpg")
+        webbrowser.open(image)
 
     def print_menu(self):
         print(*self.__controller.get_data(), sep="\n")
+        image = os.path.abspath("MVC_Pasta/Pasta.jpg")
+        webbrowser.open(image)
 
     def change_data(self, user_rights, type_of_data, data):
         if user_rights == "admin":

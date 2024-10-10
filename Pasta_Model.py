@@ -1,5 +1,5 @@
 class PastaModel:
-    def __init__(self, name: str, ingredients: list, price: float, weight: float, custom_ingredients: list = None):
+    def __init__(self, name: str, ingredients: list, price: float, weight: float, custom_ingredients: list = None, image: str = None):
         self.__name = name
         self.__ingredients = ingredients
         self.__price = price
@@ -8,6 +8,11 @@ class PastaModel:
             self.__custom_ingredients = custom_ingredients
         else:
             self.__custom_ingredients = []
+
+        if image is not None:
+            self.__image = image
+        else:
+            self.__image = ""
 
     def get_name(self):
         return self.__name
@@ -23,6 +28,9 @@ class PastaModel:
 
     def get_custom_ingredients(self):
         return self.__custom_ingredients
+
+    def get_image(self):
+        return self.__image
 
     def set_name(self, data):
         self.__name = data
@@ -47,6 +55,9 @@ class PastaModel:
         else:
             return "Error"
 
+    def set_image(self, data):
+        self.__image = data
+
 
     def add_custom_ingredients(self):
         self.__ingredients.extend(self.__custom_ingredients)
@@ -62,6 +73,8 @@ class PastaModel:
             self.set_weight(data)
         elif type_of_data == "custom_ingredients":
             self.set_custom_ingredients(data)
+        elif type_of_data == "image":
+            self.set_image(data)
         else:
             return "Error"
 

@@ -2,6 +2,9 @@ class PastaController:
     def __init__(self,model):
         self.__model = model
 
+    def get_image(self):
+        return self.__model.get_image()
+
     def get_data(self):
         return [f"Название: {self.__model.get_name()}", f"Ингредиенты: {self.__model.get_ingredients()}", f"Цена: {self.__model.get_price()}", f"Вес: {self.__model.get_weight()}"]
 
