@@ -4,7 +4,7 @@ from Pasta_View import PastaView
 import webbrowser
 import os
 
-spaghetti = PastaModel("spaghetti", ["pasta", "tomatoes", "chicken", "souse", "green"], 200.0, 1.0, ["more_green!!!"])
+spaghetti = PastaModel("spaghetti", ["pasta", "tomatoes", "chicken", "souse", "green"], 200.0, 1.0, ["more_green!!!"], "Pasta.jpg")
 c_spaghetti = PastaController(spaghetti)
 show_me_that_tasty_spaghetti = PastaView(c_spaghetti)
 
