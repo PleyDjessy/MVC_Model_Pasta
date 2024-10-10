@@ -24,7 +24,7 @@ print(c_spaghetti.client_own_pasta("customer", ["entire chicken filled with past
 show_me_that_tasty_spaghetti.print_data()
 print("\n")
 
-print(show_me_that_tasty_spaghetti.change_data("admin", "name", "Bolognese pasta")
+print(show_me_that_tasty_spaghetti.change_data("admin", "name", "Bolognese pasta"))
 show_me_that_tasty_spaghetti.print_menu()
 
 show_me_that_tasty_spaghetti.client_own_pasta("admin", ["tomatoes", "tomato_pasta", "green from tomatoes", "dried tomato roots"], 2.1)
