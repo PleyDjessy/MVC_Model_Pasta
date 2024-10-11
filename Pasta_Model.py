@@ -77,6 +77,6 @@ class PastaModel:
             self.set_image(data)
         else:
             return "Error"
-    @staticmethod
+    @staticmethod #статичный метод. Не использует self.
     def client_own_pasta(client_ingredients: list, client_weight: float):
         return f"Особая паста по рецептуре клиента: с составом:{client_ingredients} и весом {client_weight}. Цену рассчитайте сами."
