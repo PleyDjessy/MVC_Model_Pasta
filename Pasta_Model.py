@@ -1,3 +1,7 @@
+import time
+import json
+
+
 class PastaModel:
     def __init__(self, name: str, ingredients: list, price: float, weight: float, custom_ingredients: list = None, image: str = None):
         self.__name = name
@@ -83,3 +87,37 @@ class PastaModel:
         return f"Особая паста по рецептуре клиента: с составом:{client_ingredients} и весом {client_weight}. Цену рассчитайте сами."
 
     """client_own_pasta - статичный метод. Работает без self"""
+
+    def get_ordered_pizza_info(self):
+        if self.get_custom_ingredients():
+            all_ingredients = self.get_ingredients().extend(self.get_custom_ingredients())
+        else:
+            all_ingredients = self.get_ingredients()
+        ordered_pizza = {
+            "name": self.get_name(),
+            "ingredients": all_ingredients,
+            "price": self.get_price(),
+            "weight": self.get_weight()
+        }
+        return ordered_pizza
+
+    def create_json_order_file(self, order):
+        filename = f"{round(time.time(), 2)}_{order}.json"
+        with open(filename, "w", encoding="utf-8") as file:
+            data = json.dumps(self.get_ordered_pizza_info(), ensure_ascii=False, indent=2)
+            file.write(data)
+
+        return f"Заказ {order} сохранён в файл {filename}"
+
+    @staticmethod
+    def read_json_file(filename):
+        try:
+            if filename == f"{filename[:-5]}.json":
+                json_file = filename
+            else:
+                json_file = f"{filename}.json"
+            with open(json_file, "r", encoding="utf-8") as fp:
+                data = json.load(fp)
+            return data
+        except FileNotFoundError:
+            return "Такого файла нет!"
