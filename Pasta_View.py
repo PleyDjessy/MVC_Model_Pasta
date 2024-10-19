@@ -1,6 +1,7 @@
 import webbrowser
 import os
 
+
 class PastaView:
 
     def __init__(self, controller):
@@ -37,4 +38,8 @@ class PastaView:
         else:
             return "Ошибка: нет доступа"
 
+    def save_order_to_json(self, order):
+        print(self.__controller.save_order_to_json(order))
 
+    def get_data_from_json(self, filename, user_rights):
+        print(self.__controller.get_data_from_json(filename, user_rights))
