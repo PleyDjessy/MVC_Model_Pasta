@@ -90,12 +90,11 @@ class PastaModel:
 
     def get_ordered_pizza_info(self):
         if self.get_custom_ingredients():
-            all_ingredients = self.get_ingredients().extend(self.get_custom_ingredients())
-        else:
-            all_ingredients = self.get_ingredients()
+            self.__ingredients.extend(self.__custom_ingredients)
+
         ordered_pizza = {
             "name": self.get_name(),
-            "ingredients": all_ingredients,
+            "ingredients": self.get_ingredients(),
             "price": self.get_price(),
             "weight": self.get_weight()
         }

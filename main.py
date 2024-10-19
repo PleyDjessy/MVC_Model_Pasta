@@ -1,8 +1,7 @@
 from Pasta_Model import PastaModel
 from Pasta_Controller import PastaController
 from Pasta_View import PastaView
-import webbrowser
-import os
+import time
 
 spaghetti = PastaModel("spaghetti", ["pasta", "tomatoes", "chicken", "souse", "green"], 200.0, 1.0, ["more_green!!!"], "Pasta.jpg")
 c_spaghetti = PastaController(spaghetti)
@@ -34,4 +33,6 @@ if __name__ == "__main__":
 
     show_me_that_tasty_spaghetti.client_own_pasta("admin", ["tomatoes", "tomato_pasta", "green from tomatoes", "dried tomato roots"], 2.1)
 
-
+    json_file = f"{round(time.time(), 2)}_Bolognese pasta.json"
+    show_me_that_tasty_spaghetti.save_order_to_json("Bolognese pasta")
+    show_me_that_tasty_spaghetti.get_data_from_json(json_file, "admin")
