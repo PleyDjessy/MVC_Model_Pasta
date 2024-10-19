@@ -27,3 +27,11 @@ class PastaController:
         else:
             return "Ошибка: нет доступа"
 
+    def save_order_to_json(self, order):
+        return self.__model.save_order_to_json(order)
+
+    def get_data_from_json(self, filename, user_rights):
+        if user_rights == "admin":
+            return self.__model.get_data_from_json(filename)
+        else:
+            return "Ошибка: нет доступа"

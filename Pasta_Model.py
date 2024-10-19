@@ -101,7 +101,7 @@ class PastaModel:
         }
         return ordered_pizza
 
-    def create_json_order_file(self, order):
+    def save_order_to_json(self, order):
         filename = f"{round(time.time(), 2)}_{order}.json"
         with open(filename, "w", encoding="utf-8") as file:
             data = json.dumps(self.get_ordered_pizza_info(), ensure_ascii=False, indent=2)
@@ -110,7 +110,7 @@ class PastaModel:
         return f"Заказ {order} сохранён в файл {filename}"
 
     @staticmethod
-    def read_json_file(filename):
+    def get_data_from_json(filename):
         try:
             if filename == f"{filename[:-5]}.json":
                 json_file = filename
